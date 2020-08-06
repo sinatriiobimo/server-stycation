@@ -30,7 +30,7 @@ const bookingSchema = new mongoose.Schema({
     }],
     bankId: [{
         type: ObjectId,
-        ref: 'Member'
+        ref: 'Bank'
     }],
     proofPayment: {
         type: String,

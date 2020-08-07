@@ -6,12 +6,10 @@ const categorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    itemId: [
-        {
+    itemId: [{
             type: ObjectId,
             ref: 'Item'
-        }
-    ]
+        }]
 })
 
 module.exports = mongoose.model('Category', categorySchema)

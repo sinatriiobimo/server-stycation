@@ -46,7 +46,7 @@ module.exports = {
             }
 
             const testimonial =  {
-                id: "asd1293uasdads1",
+                _id: "asd1293uasdads1",
                 imageUrl: "images/testimonial2.jpg",
                 name: "Happy Family",
                 rate: 3.75,
@@ -82,7 +82,7 @@ module.exports = {
                 const bank = await Bank.find();
 
                 const testimonial =  {
-                    id: "asd1293uasdads1",
+                    _id: "asd1293uasdads1",
                     imageUrl: "images/testimonial1.jpg",
                     name: "Happy Family",
                     rate: 3.75,

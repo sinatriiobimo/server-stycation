@@ -6,6 +6,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+const cors = require('cors');
 //import mongoose
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/db_stycation', {
@@ -19,6 +20,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //router admin
 const adminRouter = require('./routes/admin');
+const apiRouter = require('./routes/api');
 var app = express();
 
 // view engine setup
@@ -40,10 +42,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/sb-admin-2', express.static(path.join(__dirname, 'node_modules/startbootstrap-sb-admin-2')));
 
+app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //admin
 app.use('/admin', adminRouter);
+app.use('/api/v1/member', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
